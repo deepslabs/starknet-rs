@@ -31,8 +31,8 @@ alloc = ["serde?/alloc"]
 serde = ["dep:serde", "alloc", "bigdecimal?/serde"]
 bigdecimal = ["std", "dep:bigdecimal", "dep:num-bigint"]
 
-[target.'cfg(target_arch = "wasm32")'.dependencies]
+[target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dependencies]
 getrandom = { version = "0.2.9", features = ["js"] }
 
-[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+[target.'cfg(all(target_arch = "wasm32", target_os = "unknown"))'.dev-dependencies]
 wasm-bindgen-test = "0.3.34"
